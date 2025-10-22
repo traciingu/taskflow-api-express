@@ -8,7 +8,6 @@ import indexRouter from './routes/index.js';
 import usersRouter from './routes/users.js';
 
 const app = express();
-const PORT = 8080;
 
 app.use(morgan('dev'));
 app.use(express.json());
@@ -34,7 +33,5 @@ app.use(function(err, req, res, next) {
   res.status(err.status || 500);
   res.render('error');
 });
-
-app.listen(PORT, () => console.log(`Listening on port ${PORT}`));
 
 export default app;
